@@ -29,7 +29,7 @@ class App extends Component {
         this.setState({ err: false, message: `` });
       }
     } catch (err) {
-      this.setState({ err: true, message: `Sorry no results matched your search` });
+      this.setState({ err: true, message: `Sorry no results matched your search`, isLoading: false });
 
       console.log(err);
     }

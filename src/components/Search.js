@@ -5,7 +5,7 @@ const debouncedSearch = (callback) => {
 
   return (value) => {
     clearTimeout(timer);
-    timer = setTimeout(() => callback(value), 1000);
+    timer = setTimeout(() => callback(value), 600);
   };
 };
 
