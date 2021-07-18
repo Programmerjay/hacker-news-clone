@@ -29,6 +29,8 @@ class App extends Component {
         this.setState({ err: false, message: `` });
       }
     } catch (err) {
+      this.setState({ err: true, message: `Sorry no results matched your search` });
+
       console.log(err);
     }
   };
@@ -45,7 +47,7 @@ class App extends Component {
         <section className='section'>
           {this.state.err && <div>{this.state.message}</div>}
           <Loader isLoading={this.state.isLoading} />
-          <Stories allStories={this.state.allStories} />
+          {!this.state.err && <Stories allStories={this.state.allStories} />}
         </section>
       </div>
     );
